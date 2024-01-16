@@ -3,20 +3,23 @@ import styled from "styled-components";
 import ImageZoom from "../../ui/image-zoom";
 
 const SliderContainer = styled.div`
-  position: relative;
-  width: 80%;
+  display: flex;
+  width: 100%;
   margin: 0 auto;
   overflow: hidden;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 `;
 
-const HeroImage = styled.div`
-  transition: transform 0.5s ease; /* Slide animation */
-`;
+// const HeroImage = styled.div`
+//   transition: transform 0.5s ease; /* Slide animation */
+// `;
 
 const ThumbnailContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 16px;
 `;
 
 const Thumbnail = styled.img<{ isSelected: boolean }>`
@@ -45,12 +48,10 @@ const Slider = ({ images }: SliderProps) => {
 
   return (
     <SliderContainer>
-      <HeroImage>
-        <ImageZoom
-          src={images[currentImageIndex]}
-          alt={`Slide ${currentImageIndex + 1}`}
-        />
-      </HeroImage>
+      <ImageZoom
+        src={images[currentImageIndex]}
+        alt={`Slide ${currentImageIndex + 1}`}
+      />
       <ThumbnailContainer>
         {images.map((image, index) => (
           <Thumbnail
