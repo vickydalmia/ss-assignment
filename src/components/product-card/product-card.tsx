@@ -5,6 +5,7 @@ import { Text } from "../../ui/text";
 import OldPrice from "../../ui/old-price";
 import SellingPrice from "../../ui/selling-price";
 import TaxPrice from "../../ui/tax-price";
+import SelectButton from "../../ui/select-button";
 
 const ProductImageWrapper = styled.div`
   width: 225px;
@@ -48,6 +49,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         fontSizeSm={14}
         price={`${product.currency}${product.withoutTaxPrice}`}
       />
+      <SelectButton />
     </ProductWrapper>
   );
 };
