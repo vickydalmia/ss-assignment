@@ -44,4 +44,8 @@ export const GlobalStyle = createGlobalStyle`
         --bg-card:#F0F1F2;
 
     }
+    body, html, #root{
+        width: 100%;
+        height: 100%;
+    }
 `;
