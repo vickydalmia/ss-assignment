@@ -32,16 +32,16 @@ export const GlobalStyle = createGlobalStyle`
         isolation: isolate;
     }
     :root{
-        --star-rating:"#FFB100";
-        --text:"#1D2024";
-        --orange:"#FF8B00";
-        --yellow: "#FFD200";
-        --text-light:"#7E8994";
-        --red: "#D80A00";
-        --green:"#108510";
-        --black:"#000000";
-        --white:"#FFFFFF";
-        --bg-card:"#F0F1F2";
+        --star-rating:#FFB100;
+        --text:#1D2024;
+        --orange:#FF8B00;
+        --yellow: #FFD200;
+        --text-light:#7E8994;
+        --red: #D80A00;
+        --green:#108510;
+        --black:#000000;
+        --white:#FFFFFF;
+        --bg-card:#F0F1F2;
 
     }
 `;
