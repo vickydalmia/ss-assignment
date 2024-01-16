@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { Text } from "../text";
 
 const StarRatingWrapper = styled.div`
   display: flex;
+  align-items: center;
 `;
 const Star = styled.div`
   width: 20px;
@@ -11,11 +13,13 @@ const Star = styled.div`
 interface StarRatingProps {
   totalStars: number;
   initialRating?: number;
+  noOfRatings?: number;
 }
 
 const StarRating: React.FC<StarRatingProps> = ({
   totalStars,
   initialRating = 0,
+  noOfRatings,
 }) => {
   const renderStars = () => {
     const starElements = [];
@@ -66,7 +70,16 @@ const StarRating: React.FC<StarRatingProps> = ({
     return starElements;
   };
 
-  return <StarRatingWrapper>{renderStars()}</StarRatingWrapper>;
+  return (
+    <StarRatingWrapper>
+      {renderStars()}
+      {noOfRatings ? (
+        <Text fontWeight={400} fontSize={14} margin="0 0 0 5px">
+          {noOfRatings}
+        </Text>
+      ) : null}
+    </StarRatingWrapper>
+  );
 };
 
 export default StarRating;

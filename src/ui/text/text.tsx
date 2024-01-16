@@ -5,7 +5,7 @@ interface StyleProps extends CSSProperties {
   "--text-color"?: string;
 }
 interface TextProps {
-  fontWeight: 500 | 600 | 700;
+  fontWeight: 400 | 500 | 600 | 700;
   fontSize: 32 | 30 | 28 | 26 | 24 | 22 | 20 | 18 | 16 | 14 | 12 | 10;
   lineHeight?: number;
   letterSpacing?: number;
