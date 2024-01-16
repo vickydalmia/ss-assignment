@@ -1,4 +1,8 @@
 import productOneFirst from "./images/product-1/product-11.png";
+import productOneTwo from "./images/product-1/product-12.png";
+import productOneThree from "./images/product-1/product-13.png";
+import productOneFour from "./images/product-1/product-14.png";
+import productOneFive from "./images/product-1/product-15.png";
 import productTwoFirst from "./images/product-2/product-21.png";
 import productThreeFirst from "./images/product-3/product-31.png";
 import productFourFirst from "./images/product-4/product-41.png";
@@ -8,7 +12,13 @@ import productSevenFirst from "./images/product-7/product-71.png";
 
 export const product = {
   id: 1,
-  images: [productOneFirst],
+  images: [
+    productOneFirst,
+    productOneTwo,
+    productOneThree,
+    productOneFour,
+    productOneFive,
+  ],
   title: "Dobbs Corner Gaming Desk with Adjustable Monitor...",
   mrp: 97.99,
   sellingPrice: 91.99,
