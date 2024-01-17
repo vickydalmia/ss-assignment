@@ -18,8 +18,9 @@ const SliderContainer = styled.div`
 
 const ThumbnailContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 16px;
+  width: 100%;
 `;
 
 const Thumbnail = styled.img<{ isSelected: boolean }>`

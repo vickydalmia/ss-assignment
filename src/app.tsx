@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ProductCard from "./components/product-card";
-import { product, products } from "./data/product";
+import { ProductType, product, products } from "./data/product";
 import { useState } from "react";
 import Modal from "./ui/modal";
 import ProductDetail from "./components/product-detail";
@@ -43,6 +43,12 @@ const PlusIconWrapper = styled.div`
 
 function App() {
   const [showProductDetail, setShowProductDetail] = useState(false);
+  const [selectedProduct, setProduct] = useState<null | ProductType>(null);
+
+  const setSelectedProduct = (product: ProductType) => {
+    setShowProductDetail(true);
+    setProduct(product);
+  };
 
   return (
     <CartProvider>
@@ -53,13 +59,19 @@ function App() {
               Frequently bought together
             </Text>
             <ProductList>
-              <ProductCard product={product} />
+              <ProductCard
+                product={product}
+                setSelectedProduct={setSelectedProduct}
+              />
               {product.frequentlyBought.length > 0 ? (
                 <FrequentlyBoughtSection>
                   <PlusIconWrapper>
                     <PlusIcon />
                   </PlusIconWrapper>
-                  <Slider products={products} />
+                  <Slider
+                    products={products}
+                    setSelectedProduct={setSelectedProduct}
+                  />
                 </FrequentlyBoughtSection>
               ) : null}
               <ProductPrice
@@ -70,9 +82,15 @@ function App() {
             </ProductList>
           </ProductWrapper>
         </ProductSection>
-        {showProductDetail ? (
+        {showProductDetail && selectedProduct ? (
           <Modal>
-            <ProductDetail product={product} />
+            <ProductDetail
+              product={selectedProduct}
+              onClose={() => {
+                setShowProductDetail(false);
+                setProduct(null);
+              }}
+            />
           </Modal>
         ) : null}
       </AppWrapper>

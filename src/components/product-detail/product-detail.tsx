@@ -21,6 +21,7 @@ const ProductDetailWrapper = styled.div`
 `;
 interface ProductDetailProps {
   product: ProductType;
+  onClose: () => void;
 }
 const ProductDetailSection = styled.div`
   display: flex;
@@ -84,7 +85,7 @@ const OpenLink = styled.div`
   margin-bottom: 5px;
 `;
 
-const ProductDetail = ({ product }: ProductDetailProps) => {
+const ProductDetail = ({ product, onClose }: ProductDetailProps) => {
   const [activeTab, setActiveTab] = useState(0);
   const tabsData = [
     {
@@ -107,7 +108,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
         <Text fontSize={24} fontWeight={700}>
           {product.title}
         </Text>
-        <IconButton onClick={() => {}}>
+        <IconButton onClick={onClose}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -205,28 +206,36 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
               ).toFixed(2)}`}
             />
           ) : null}
-          <Border margin="29px 0 0 0" />
-          <ColorSelectorsWrapper>
-            <Text
-              fontSize={16}
-              fontWeight={700}
-              style={{ "--text-color": "var(--black)" }}
-            >
-              Color: {product.variant[0].color}
-            </Text>
-            <ColorSelectors>
-              {product.variant.map((each, index) => (
-                <ColorSelect
-                  color={each.color}
-                  key={each.color}
-                  width="40"
-                  height="40"
-                  isSelected={index === 0 ? true : false}
-                />
-              ))}
-            </ColorSelectors>
-          </ColorSelectorsWrapper>
-          <Border margin="0 0 24px 0" />
+
+          {product.variant.length > 0 ? (
+            <>
+              <Border margin="29px 0 0 0" />
+              <ColorSelectorsWrapper>
+                <Text
+                  fontSize={16}
+                  fontWeight={700}
+                  style={{ "--text-color": "var(--black)" }}
+                >
+                  Color: {product.variant[0].color}
+                </Text>
+                <ColorSelectors>
+                  {product.variant.map((each, index) => (
+                    <ColorSelect
+                      color={each.color}
+                      key={each.color}
+                      width="40"
+                      height="40"
+                      isSelected={index === 0 ? true : false}
+                    />
+                  ))}
+                </ColorSelectors>
+              </ColorSelectorsWrapper>
+              <Border margin="0 0 24px 0" />
+            </>
+          ) : (
+            <Border margin="24px 0 24px 0" />
+          )}
+
           <Cart width="125" />
           <Button variant="primary" margin="16px 0 0 0">
             <Text

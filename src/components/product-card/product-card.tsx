@@ -21,7 +21,6 @@ const ProductWrapper = styled.div`
   flex-direction: column;
   width: 225px;
   align-items: flex-start;
-  
 `;
 
 const PriceBox = styled.div`
@@ -40,8 +39,9 @@ const TitleBox = styled.div`
 
 interface ProductCardProps {
   product: ProductType;
+  setSelectedProduct: (product: ProductType) => void;
 }
-const ProductCard = ({ product }: ProductCardProps) => {
+const ProductCard = ({ product, setSelectedProduct }: ProductCardProps) => {
   return (
     <ProductWrapper>
       <ProductImageWrapper>
@@ -79,7 +79,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           price={`${product.currency}${product.withoutTaxPrice}`}
         />
       </PriceBox>
-      <SelectButton />
+      <SelectButton onClick={() => setSelectedProduct(product)} />
     </ProductWrapper>
   );
 };

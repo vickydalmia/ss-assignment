@@ -33,9 +33,10 @@ const SliderBtn = styled.button`
 `;
 interface SliderProps {
   products: ProductType[];
+  setSelectedProduct: (product: ProductType) => void;
 }
 
-const Slider = ({ products }: SliderProps) => {
+const Slider = ({ products, setSelectedProduct }: SliderProps) => {
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
@@ -65,7 +66,10 @@ const Slider = ({ products }: SliderProps) => {
       <SliderContainer>
         {products.slice(current, current + 2).map((product) => (
           <Slide key={product.id}>
-            <ProductCard product={product} />
+            <ProductCard
+              product={product}
+              setSelectedProduct={setSelectedProduct}
+            />
           </Slide>
         ))}
       </SliderContainer>

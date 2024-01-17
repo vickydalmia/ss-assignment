@@ -6,6 +6,7 @@ import styled from "styled-components";
 
 interface SelectButtonProps {
   isSelected?: boolean;
+  onClick: () => void;
 }
 const RightClickButton = styled.button`
   width: 24px;
@@ -25,9 +26,9 @@ const ButtonInside = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
-const SelectButton = ({ isSelected }: SelectButtonProps) => {
+const SelectButton = ({ isSelected, onClick }: SelectButtonProps) => {
   return (
-    <Button variant="secondary" margin="10px 0 0 0">
+    <Button variant="secondary" margin="10px 0 0 0" onClick={onClick}>
       <ButtonInside>
         {isSelected ? (
           <ColorSelect color="black" isSelected={true} width="24" height="24" />
