@@ -2,9 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Text } from "../text";
 
-const StarRatingWrapper = styled.div`
+const StarRatingWrapper = styled.div<{ margin?: string }>`
   display: flex;
   align-items: center;
+  margin: ${({ margin }) => (margin ? margin : null)};
 `;
 const Star = styled.div`
   width: 20px;
@@ -14,12 +15,14 @@ interface StarRatingProps {
   totalStars: number;
   initialRating?: number;
   noOfRatings?: number;
+  margin?: string;
 }
 
 const StarRating: React.FC<StarRatingProps> = ({
   totalStars,
   initialRating = 0,
   noOfRatings,
+  margin,
 }) => {
   const renderStars = () => {
     const starElements = [];
@@ -71,7 +74,7 @@ const StarRating: React.FC<StarRatingProps> = ({
   };
 
   return (
-    <StarRatingWrapper>
+    <StarRatingWrapper margin={margin}>
       {renderStars()}
       {noOfRatings ? (
         <Text fontWeight={400} fontSize={14} margin="0 0 0 5px">

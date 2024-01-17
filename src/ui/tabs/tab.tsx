@@ -16,6 +16,7 @@ const TabWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 32px;
+  width: fit-content;
 `;
 
 const TabBorder = styled.div<{ isActive: boolean | undefined }>`
@@ -29,7 +30,6 @@ interface TabProps {
   title: string;
   isActive?: boolean;
   onClick?: () => void;
-  children: React.ReactNode;
 }
 
 const Tab = ({ title, isActive, onClick }: TabProps) => {

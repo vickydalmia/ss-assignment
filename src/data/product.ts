@@ -9,7 +9,7 @@ import productFourFirst from "./images/product-4/product-41.png";
 import productFifthFirst from "./images/product-5/product-51.png";
 import productSixthFirst from "./images/product-6/product-61.png";
 import productSevenFirst from "./images/product-7/product-71.png";
-
+type Color = "black" | "green" | "red";
 export const product = {
   id: 1,
   images: [
@@ -49,7 +49,24 @@ export const product = {
   <li>Headphone Hook: 5L x 2W cm. Weight Capacity: 40kg (table top), 3kg (monitor shelf)*Self Assembly Required*Please note that this product is delivered direct from our supplier and may take a little longer to arrive</li></ul>`,
 };
 
-export type ProductType = typeof product;
+export type ProductType = {
+  id: number;
+  images: string[];
+  title: string;
+  mrp: number;
+  sellingPrice: number;
+  withoutTaxPrice: number;
+  currency: string;
+  rating: number;
+  frequentlyBought: number[];
+  variant: {
+    color: Color;
+    qty: number;
+  }[];
+  isNewStock: boolean;
+  onClearance: boolean;
+  description: string;
+};
 
 export const products = [
   {

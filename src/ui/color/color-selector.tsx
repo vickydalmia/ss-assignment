@@ -19,6 +19,9 @@ const ColorSelectWrapper = styled.div<{
   outline-offset: ${({ isSelected }) => (isSelected ? "1px" : null)};
   cursor: pointer;
   background-color: ${({ color }) => (color ? Colors[color] : null)};
+  &:not(:last-child){
+    margin-right: 8px;
+  }
 `;
 interface ColorSelectProps {
   width?: string;
