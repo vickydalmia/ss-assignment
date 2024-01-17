@@ -6,18 +6,9 @@ interface TaxPriceProps {
 }
 const TaxPrice = ({ fontSize, fontSizeSm, price }: TaxPriceProps) => {
   return (
-    <Text
-      fontSize={fontSize}
-      fontWeight={400}
-      style={{ "--text-color": "var(--text-light)" }}
-    >
+    <Text fontSize={fontSize} fontWeight={400}>
       {price}
-      <Text
-        fontSize={fontSizeSm}
-        fontWeight={400}
-        margin="0 0 0 5px"
-        style={{ "--text-color": "var(--text-light)" }}
-      >
+      <Text fontSize={fontSizeSm} fontWeight={400} margin="0 0 0 5px">
         ex VAT
       </Text>
     </Text>

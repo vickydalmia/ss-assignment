@@ -6,6 +6,7 @@ import { useState } from "react";
 import Tabs from "../../ui/tabs";
 import { products } from "../../data/product";
 import ProductCard from "../product-card";
+import SidebarPrice from "../sidebar-product-price/sidebar-product-price";
 
 const SidebarWrapper = styled.div`
   width: 600px;
@@ -100,6 +101,46 @@ const Sidebar = ({ onClose }: SidebarProps) => {
       element: <></>,
     },
   ];
+
+  const oldPrice = (() => {
+    let oldPrice = 0;
+    let currency = "";
+    state.cartItems.forEach((each) => {
+      oldPrice = oldPrice + each.mrp;
+      currency = each.currency;
+    });
+    return `${currency}${oldPrice.toFixed(2)}`;
+  })();
+  const sellingPrice = (() => {
+    let sellingPrice = 0;
+    let currency = "";
+    state.cartItems.forEach((each) => {
+      sellingPrice = sellingPrice + each.sellingPrice;
+      currency = each.currency;
+    });
+    return `${currency}${sellingPrice.toFixed(2)}`;
+  })();
+  const taxPrice = (() => {
+    let taxPrice = 0;
+    let currency = "";
+    state.cartItems.forEach((each) => {
+      taxPrice = taxPrice + each.withoutTaxPrice;
+      currency = each.currency;
+    });
+    return `${currency}${taxPrice.toFixed(2)}`;
+  })();
+  const savePrice = (() => {
+    let mrpPrice = 0;
+    let sellingPrice = 0;
+    let currency = "";
+    state.cartItems.forEach((each) => {
+      sellingPrice = sellingPrice + each.sellingPrice;
+      mrpPrice = mrpPrice + each.mrp;
+      currency = each.currency;
+    });
+    return `Save ${currency}${(mrpPrice - sellingPrice).toFixed(2)}`;
+  })();
+
   return (
     <SidebarWrapper>
       <SidebarHeader>
@@ -147,6 +188,12 @@ const Sidebar = ({ onClose }: SidebarProps) => {
             );
           })}
         </ProductImageList>
+        <SidebarPrice
+          oldPrice={oldPrice}
+          sellingPrice={sellingPrice}
+          savingPrice={savePrice}
+          taxPrice={taxPrice}
+        />
         <SidebarHeaderButtonWrapper>
           <Button variant="secondary">
             <Text fontSize={14} fontWeight={700}>
