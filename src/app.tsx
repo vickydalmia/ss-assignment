@@ -8,6 +8,7 @@ import { Text } from "./ui/text";
 import PlusIcon from "./ui/icons/plus-icon";
 import Slider from "./components/slider";
 import ProductPrice from "./components/product-price";
+import { CartProvider } from "./store/product-provider";
 
 const ProductSection = styled.div`
   height: 582px;
@@ -44,36 +45,38 @@ function App() {
   const [showProductDetail, setShowProductDetail] = useState(false);
 
   return (
-    <AppWrapper>
-      <ProductSection>
-        <ProductWrapper>
-          <Text fontSize={20} fontWeight={700}>
-            Frequently bought together
-          </Text>
-          <ProductList>
-            <ProductCard product={product} />
-            {product.frequentlyBought.length > 0 ? (
-              <FrequentlyBoughtSection>
-                <PlusIconWrapper>
-                  <PlusIcon />
-                </PlusIconWrapper>
-                <Slider products={products} />
-              </FrequentlyBoughtSection>
-            ) : null}
-            <ProductPrice
-              oldPrice={`${product.currency}${product.mrp}`}
-              sellingPrice={`${product.currency}${product.sellingPrice}`}
-              taxPrice={`${product.currency}${product.withoutTaxPrice}`}
-            />
-          </ProductList>
-        </ProductWrapper>
-      </ProductSection>
-      {showProductDetail ? (
-        <Modal>
-          <ProductDetail product={product} />
-        </Modal>
-      ) : null}
-    </AppWrapper>
+    <CartProvider>
+      <AppWrapper>
+        <ProductSection>
+          <ProductWrapper>
+            <Text fontSize={20} fontWeight={700}>
+              Frequently bought together
+            </Text>
+            <ProductList>
+              <ProductCard product={product} />
+              {product.frequentlyBought.length > 0 ? (
+                <FrequentlyBoughtSection>
+                  <PlusIconWrapper>
+                    <PlusIcon />
+                  </PlusIconWrapper>
+                  <Slider products={products} />
+                </FrequentlyBoughtSection>
+              ) : null}
+              <ProductPrice
+                oldPrice={`${product.currency}${product.mrp}`}
+                sellingPrice={`${product.currency}${product.sellingPrice}`}
+                taxPrice={`${product.currency}${product.withoutTaxPrice}`}
+              />
+            </ProductList>
+          </ProductWrapper>
+        </ProductSection>
+        {showProductDetail ? (
+          <Modal>
+            <ProductDetail product={product} />
+          </Modal>
+        ) : null}
+      </AppWrapper>
+    </CartProvider>
   );
 }
 
