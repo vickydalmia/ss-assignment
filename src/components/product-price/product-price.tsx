@@ -20,8 +20,9 @@ const ButtonWrapper = styled.div`
 `;
 interface ProductPriceProps {
   currency: string;
+  showSidebar: () => void;
 }
-const ProductPrice = ({ currency }: ProductPriceProps) => {
+const ProductPrice = ({ currency, showSidebar }: ProductPriceProps) => {
   const { state } = useCart();
 
   const oldPrice = (() => {
@@ -58,7 +59,7 @@ const ProductPrice = ({ currency }: ProductPriceProps) => {
 
       <TaxPrice fontSize={18} fontSizeSm={18} price={taxPrice} />
       <ButtonWrapper>
-        <Button variant="primary">
+        <Button variant="primary" onClick={showSidebar}>
           <Text
             fontSize={14}
             fontWeight={700}

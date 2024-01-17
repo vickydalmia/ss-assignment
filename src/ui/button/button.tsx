@@ -39,7 +39,7 @@ const Button = (props: ButtonProps) => {
       "--height": "40px",
     },
     secondary: {
-      "--bg-color": "none",
+      "--bg-color": "var(--white)",
       "--color": "var(--text)",
       "--border-radius": "4px",
       "--height": "40px",

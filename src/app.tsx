@@ -9,6 +9,7 @@ import PlusIcon from "./ui/icons/plus-icon";
 import Slider from "./components/slider";
 import ProductPrice from "./components/product-price";
 import { CartProvider } from "./store/product-provider";
+import Sidebar from "./components/sidebar";
 
 const ProductSection = styled.div`
   height: 582px;
@@ -44,6 +45,7 @@ const PlusIconWrapper = styled.div`
 function App() {
   const [showProductDetail, setShowProductDetail] = useState(false);
   const [selectedProduct, setProduct] = useState<null | ProductType>(null);
+  const [showSidebar, setSidebar] = useState(false);
 
   const setSelectedProduct = (product: ProductType) => {
     setShowProductDetail(true);
@@ -74,7 +76,10 @@ function App() {
                   />
                 </FrequentlyBoughtSection>
               ) : null}
-              <ProductPrice currency={product.currency} />
+              <ProductPrice
+                currency={product.currency}
+                showSidebar={() => setSidebar(true)}
+              />
             </ProductList>
           </ProductWrapper>
         </ProductSection>
@@ -87,6 +92,11 @@ function App() {
                 setProduct(null);
               }}
             />
+          </Modal>
+        ) : null}
+        {showSidebar ? (
+          <Modal>
+            <Sidebar onClose={() => setSidebar(false)} />
           </Modal>
         ) : null}
       </AppWrapper>
