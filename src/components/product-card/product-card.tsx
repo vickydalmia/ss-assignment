@@ -20,6 +20,22 @@ const ProductWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 225px;
+  align-items: flex-start;
+  
+`;
+
+const PriceBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 65px;
+  align-items: flex-start;
+  justify-content: flex-end;
+`;
+
+const TitleBox = styled.div`
+  height: 35px;
+  display: flex;
+  margin-bottom: 20px;
 `;
 
 interface ProductCardProps {
@@ -31,24 +47,38 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <ProductImageWrapper>
         <ProductImage src={product.images[0]} />
       </ProductImageWrapper>
-      <StarRating totalStars={5} initialRating={5} noOfRatings={3} margin="5px 0 0 0"/>
-      <Text fontSize={14} fontWeight={400} margin="10px 0 13px 0">
-        {product.title}
-      </Text>
-      {product.mrp > product.sellingPrice ? (
-        <OldPrice fontSize={14} price={`${product.currency}${product.mrp}`} />
-      ) : null}
-      <SellingPrice
-        fontSize={24}
-        fontSizeSm={14}
-        price={`${product.currency}${product.sellingPrice}`}
+      <StarRating
+        totalStars={5}
+        initialRating={5}
+        noOfRatings={3}
+        margin="5px 0 0 0"
       />
+      <TitleBox>
+        <Text
+          fontSize={14}
+          fontWeight={400}
+          margin="10px 0 13px 0"
+          textAlign="left"
+        >
+          {product.title}
+        </Text>
+      </TitleBox>
+      <PriceBox>
+        {product.mrp > product.sellingPrice ? (
+          <OldPrice fontSize={14} price={`${product.currency}${product.mrp}`} />
+        ) : null}
+        <SellingPrice
+          fontSize={24}
+          fontSizeSm={14}
+          price={`${product.currency}${product.sellingPrice}`}
+        />
 
-      <TaxPrice
-        fontSize={14}
-        fontSizeSm={14}
-        price={`${product.currency}${product.withoutTaxPrice}`}
-      />
+        <TaxPrice
+          fontSize={14}
+          fontSizeSm={14}
+          price={`${product.currency}${product.withoutTaxPrice}`}
+        />
+      </PriceBox>
       <SelectButton />
     </ProductWrapper>
   );

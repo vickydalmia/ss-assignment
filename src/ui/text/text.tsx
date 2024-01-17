@@ -11,6 +11,7 @@ interface TextProps {
   letterSpacing?: number;
   style?: StyleProps;
   margin?: string;
+  textAlign?: "left" | "right" | "center";
 }
 
 const Text = styled.span<TextProps>`
@@ -21,6 +22,7 @@ const Text = styled.span<TextProps>`
     letterSpacing ? `${letterSpacing}px` : null};
   color: var(--text-color, var(--text));
   margin: ${({ margin }) => (margin ? margin : null)};
+  text-align: ${({ textAlign }) => (textAlign ? textAlign : null)};
 `;
 
 Text.displayName = "Text";

@@ -14,7 +14,9 @@ const ProductSection = styled.div`
   width: 100%;
 `;
 const ProductWrapper = styled.div`
-  padding: 50px 160px 47px;
+  padding: 50px 0;
+  width: 1125px;
+  margin: auto;
 `;
 const AppWrapper = styled.div`
   display: flex;
@@ -33,6 +35,10 @@ const FrequentlyBoughtSection = styled.div`
   display: flex;
 `;
 
+const PlusIconWrapper = styled.div`
+  margin: 15% 6px 0 32px;
+`;
+
 function App() {
   const [showProductDetail, setShowProductDetail] = useState(false);
 
@@ -47,7 +53,9 @@ function App() {
             <ProductCard product={product} />
             {product.frequentlyBought.length > 0 ? (
               <FrequentlyBoughtSection>
-                <PlusIcon />
+                <PlusIconWrapper>
+                  <PlusIcon />
+                </PlusIconWrapper>
                 <Slider products={products} />
               </FrequentlyBoughtSection>
             ) : null}
