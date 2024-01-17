@@ -4,6 +4,7 @@ import OldPrice from "../../ui/old-price";
 import SellingPrice from "../../ui/selling-price";
 import TaxPrice from "../../ui/tax-price";
 import Button from "../../ui/button";
+import { useCart } from "../../store/use-cart";
 
 const ProductPriceWrapper = styled.div`
   display: flex;
@@ -18,21 +19,38 @@ const ButtonWrapper = styled.div`
   margin-top: 16px;
 `;
 interface ProductPriceProps {
-  oldPrice: string;
-  taxPrice: string;
-  sellingPrice: string;
+  currency: string;
 }
-const ProductPrice = ({
-  oldPrice,
-  taxPrice,
-  sellingPrice,
-}: ProductPriceProps) => {
+const ProductPrice = ({ currency }: ProductPriceProps) => {
+  const { state } = useCart();
+
+  const oldPrice = (() => {
+    let oldPrice = 0;
+    state.cartItems.forEach((each) => {
+      oldPrice = oldPrice + each.mrp;
+    });
+    return `${currency}${oldPrice.toFixed(2)}`;
+  })();
+  const sellingPrice = (() => {
+    let sellingPrice = 0;
+    state.cartItems.forEach((each) => {
+      sellingPrice = sellingPrice + each.sellingPrice;
+    });
+    return `${currency}${sellingPrice.toFixed(2)}`;
+  })();
+  const taxPrice = (() => {
+    let taxPrice = 0;
+    state.cartItems.forEach((each) => {
+      taxPrice = taxPrice + each.withoutTaxPrice;
+    });
+    return `${currency}${taxPrice.toFixed(2)}`;
+  })();
   return (
     <ProductPriceWrapper>
       <Text fontSize={14} fontWeight={600}>
-        2 Items added
+        {state.cartItems.length} Items added
       </Text>
-      <Text fontSize={14} fontWeight={400}>
+      <Text fontSize={14} fontWeight={400} margin="8px 0">
         Total bundle price
       </Text>
       {oldPrice ? <OldPrice fontSize={14} price={oldPrice} /> : null}

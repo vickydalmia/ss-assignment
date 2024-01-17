@@ -74,11 +74,7 @@ function App() {
                   />
                 </FrequentlyBoughtSection>
               ) : null}
-              <ProductPrice
-                oldPrice={`${product.currency}${product.mrp}`}
-                sellingPrice={`${product.currency}${product.sellingPrice}`}
-                taxPrice={`${product.currency}${product.withoutTaxPrice}`}
-              />
+              <ProductPrice currency={product.currency} />
             </ProductList>
           </ProductWrapper>
         </ProductSection>
