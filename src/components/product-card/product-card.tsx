@@ -31,8 +31,8 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <ProductImageWrapper>
         <ProductImage src={product.images[0]} />
       </ProductImageWrapper>
-      <StarRating totalStars={5} initialRating={5} noOfRatings={3} />
-      <Text fontSize={14} fontWeight={400}>
+      <StarRating totalStars={5} initialRating={5} noOfRatings={3} margin="5px 0 0 0"/>
+      <Text fontSize={14} fontWeight={400} margin="10px 0 13px 0">
         {product.title}
       </Text>
       {product.mrp > product.sellingPrice ? (

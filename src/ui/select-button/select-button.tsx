@@ -27,7 +27,7 @@ const ButtonInside = styled.div`
 `;
 const SelectButton = ({ isSelected }: SelectButtonProps) => {
   return (
-    <Button variant="secondary">
+    <Button variant="secondary" margin="10px 0 0 0">
       <ButtonInside>
         {isSelected ? (
           <ColorSelect color="black" isSelected={true} width="24" height="24" />

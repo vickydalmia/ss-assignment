@@ -10,7 +10,7 @@ import productFifthFirst from "./images/product-5/product-51.png";
 import productSixthFirst from "./images/product-6/product-61.png";
 import productSevenFirst from "./images/product-7/product-71.png";
 type Color = "black" | "green" | "red";
-export const product = {
+export const product: ProductType = {
   id: 1,
   images: [
     productOneFirst,
@@ -68,7 +68,7 @@ export type ProductType = {
   description: string;
 };
 
-export const products = [
+export const products: ProductType[] = [
   {
     id: 2,
     images: [productTwoFirst],
@@ -91,6 +91,15 @@ export const products = [
     ],
     isNewStock: false,
     onClearance: true,
+    description: `The Dobbs Corner Gaming Desk with Adjustable Monitor Stand is a fantastic option for making the most out of your space.Featuring an L-shaped design, this desk provides ample space for your devices and other gaming essentials and comes with a headphone hook and a cup holder provides a clutter-free space.The K shaped metal frame ensures strength and the particleboard worktop features a carbon fibre texture for durability against everyday use.Complete with a 3 level adjustable monitor shelf, this L shaped gaming desk will offer you a practical and stylish set up to really immerse yourself in the game.. 
+  <ul>
+  <li>L shaped corner desk.</li> 
+  <li>Provides ample space for your devices and other gaming essentials. Headphone hook and a cup holder provides a clutter-free space. </li>
+  <li>K shaped metal frame with particleboard worktops ensure strength and durability;. </li>
+  <li>Carbon fibre texture on the table top for durability. Protective foot pads prevent your floor from damaged. Monitor shelf is 3 level adjustable. </li>
+  <li>Cross panels of the frame for stability. Material: Particleboard, Metal;. Overall Dimension: 125L x 125W x 75H cm. Table top Size (3 section): 73W x 48D cm, 48W x 48D cm, 73W x 48D cm. </li>
+  <li>Table top Height: 75 cm. Monitor Shelf Height: 48W x 20D cm. Cup Holder Size: 6cm. </li>
+  <li>Headphone Hook: 5L x 2W cm. Weight Capacity: 40kg (table top), 3kg (monitor shelf)*Self Assembly Required*Please note that this product is delivered direct from our supplier and may take a little longer to arrive</li></ul>`,
   },
   {
     id: 3,
@@ -105,6 +114,15 @@ export const products = [
     variant: [],
     isNewStock: true,
     onClearance: false,
+    description: `The Dobbs Corner Gaming Desk with Adjustable Monitor Stand is a fantastic option for making the most out of your space.Featuring an L-shaped design, this desk provides ample space for your devices and other gaming essentials and comes with a headphone hook and a cup holder provides a clutter-free space.The K shaped metal frame ensures strength and the particleboard worktop features a carbon fibre texture for durability against everyday use.Complete with a 3 level adjustable monitor shelf, this L shaped gaming desk will offer you a practical and stylish set up to really immerse yourself in the game.. 
+  <ul>
+  <li>L shaped corner desk.</li> 
+  <li>Provides ample space for your devices and other gaming essentials. Headphone hook and a cup holder provides a clutter-free space. </li>
+  <li>K shaped metal frame with particleboard worktops ensure strength and durability;. </li>
+  <li>Carbon fibre texture on the table top for durability. Protective foot pads prevent your floor from damaged. Monitor shelf is 3 level adjustable. </li>
+  <li>Cross panels of the frame for stability. Material: Particleboard, Metal;. Overall Dimension: 125L x 125W x 75H cm. Table top Size (3 section): 73W x 48D cm, 48W x 48D cm, 73W x 48D cm. </li>
+  <li>Table top Height: 75 cm. Monitor Shelf Height: 48W x 20D cm. Cup Holder Size: 6cm. </li>
+  <li>Headphone Hook: 5L x 2W cm. Weight Capacity: 40kg (table top), 3kg (monitor shelf)*Self Assembly Required*Please note that this product is delivered direct from our supplier and may take a little longer to arrive</li></ul>`,
   },
   {
     id: 4,
@@ -128,6 +146,15 @@ export const products = [
     ],
     isNewStock: false,
     onClearance: false,
+    description: `The Dobbs Corner Gaming Desk with Adjustable Monitor Stand is a fantastic option for making the most out of your space.Featuring an L-shaped design, this desk provides ample space for your devices and other gaming essentials and comes with a headphone hook and a cup holder provides a clutter-free space.The K shaped metal frame ensures strength and the particleboard worktop features a carbon fibre texture for durability against everyday use.Complete with a 3 level adjustable monitor shelf, this L shaped gaming desk will offer you a practical and stylish set up to really immerse yourself in the game.. 
+  <ul>
+  <li>L shaped corner desk.</li> 
+  <li>Provides ample space for your devices and other gaming essentials. Headphone hook and a cup holder provides a clutter-free space. </li>
+  <li>K shaped metal frame with particleboard worktops ensure strength and durability;. </li>
+  <li>Carbon fibre texture on the table top for durability. Protective foot pads prevent your floor from damaged. Monitor shelf is 3 level adjustable. </li>
+  <li>Cross panels of the frame for stability. Material: Particleboard, Metal;. Overall Dimension: 125L x 125W x 75H cm. Table top Size (3 section): 73W x 48D cm, 48W x 48D cm, 73W x 48D cm. </li>
+  <li>Table top Height: 75 cm. Monitor Shelf Height: 48W x 20D cm. Cup Holder Size: 6cm. </li>
+  <li>Headphone Hook: 5L x 2W cm. Weight Capacity: 40kg (table top), 3kg (monitor shelf)*Self Assembly Required*Please note that this product is delivered direct from our supplier and may take a little longer to arrive</li></ul>`,
   },
   {
     id: 5,
@@ -142,6 +169,15 @@ export const products = [
     variant: [],
     isNewStock: false,
     onClearance: false,
+    description: `The Dobbs Corner Gaming Desk with Adjustable Monitor Stand is a fantastic option for making the most out of your space.Featuring an L-shaped design, this desk provides ample space for your devices and other gaming essentials and comes with a headphone hook and a cup holder provides a clutter-free space.The K shaped metal frame ensures strength and the particleboard worktop features a carbon fibre texture for durability against everyday use.Complete with a 3 level adjustable monitor shelf, this L shaped gaming desk will offer you a practical and stylish set up to really immerse yourself in the game.. 
+  <ul>
+  <li>L shaped corner desk.</li> 
+  <li>Provides ample space for your devices and other gaming essentials. Headphone hook and a cup holder provides a clutter-free space. </li>
+  <li>K shaped metal frame with particleboard worktops ensure strength and durability;. </li>
+  <li>Carbon fibre texture on the table top for durability. Protective foot pads prevent your floor from damaged. Monitor shelf is 3 level adjustable. </li>
+  <li>Cross panels of the frame for stability. Material: Particleboard, Metal;. Overall Dimension: 125L x 125W x 75H cm. Table top Size (3 section): 73W x 48D cm, 48W x 48D cm, 73W x 48D cm. </li>
+  <li>Table top Height: 75 cm. Monitor Shelf Height: 48W x 20D cm. Cup Holder Size: 6cm. </li>
+  <li>Headphone Hook: 5L x 2W cm. Weight Capacity: 40kg (table top), 3kg (monitor shelf)*Self Assembly Required*Please note that this product is delivered direct from our supplier and may take a little longer to arrive</li></ul>`,
   },
   {
     id: 6,
@@ -165,6 +201,15 @@ export const products = [
     ],
     isNewStock: false,
     onClearance: false,
+    description: `The Dobbs Corner Gaming Desk with Adjustable Monitor Stand is a fantastic option for making the most out of your space.Featuring an L-shaped design, this desk provides ample space for your devices and other gaming essentials and comes with a headphone hook and a cup holder provides a clutter-free space.The K shaped metal frame ensures strength and the particleboard worktop features a carbon fibre texture for durability against everyday use.Complete with a 3 level adjustable monitor shelf, this L shaped gaming desk will offer you a practical and stylish set up to really immerse yourself in the game.. 
+  <ul>
+  <li>L shaped corner desk.</li> 
+  <li>Provides ample space for your devices and other gaming essentials. Headphone hook and a cup holder provides a clutter-free space. </li>
+  <li>K shaped metal frame with particleboard worktops ensure strength and durability;. </li>
+  <li>Carbon fibre texture on the table top for durability. Protective foot pads prevent your floor from damaged. Monitor shelf is 3 level adjustable. </li>
+  <li>Cross panels of the frame for stability. Material: Particleboard, Metal;. Overall Dimension: 125L x 125W x 75H cm. Table top Size (3 section): 73W x 48D cm, 48W x 48D cm, 73W x 48D cm. </li>
+  <li>Table top Height: 75 cm. Monitor Shelf Height: 48W x 20D cm. Cup Holder Size: 6cm. </li>
+  <li>Headphone Hook: 5L x 2W cm. Weight Capacity: 40kg (table top), 3kg (monitor shelf)*Self Assembly Required*Please note that this product is delivered direct from our supplier and may take a little longer to arrive</li></ul>`,
   },
   {
     id: 7,
@@ -179,5 +224,14 @@ export const products = [
     variant: [],
     isNewStock: false,
     onClearance: false,
+    description: `The Dobbs Corner Gaming Desk with Adjustable Monitor Stand is a fantastic option for making the most out of your space.Featuring an L-shaped design, this desk provides ample space for your devices and other gaming essentials and comes with a headphone hook and a cup holder provides a clutter-free space.The K shaped metal frame ensures strength and the particleboard worktop features a carbon fibre texture for durability against everyday use.Complete with a 3 level adjustable monitor shelf, this L shaped gaming desk will offer you a practical and stylish set up to really immerse yourself in the game.. 
+  <ul>
+  <li>L shaped corner desk.</li> 
+  <li>Provides ample space for your devices and other gaming essentials. Headphone hook and a cup holder provides a clutter-free space. </li>
+  <li>K shaped metal frame with particleboard worktops ensure strength and durability;. </li>
+  <li>Carbon fibre texture on the table top for durability. Protective foot pads prevent your floor from damaged. Monitor shelf is 3 level adjustable. </li>
+  <li>Cross panels of the frame for stability. Material: Particleboard, Metal;. Overall Dimension: 125L x 125W x 75H cm. Table top Size (3 section): 73W x 48D cm, 48W x 48D cm, 73W x 48D cm. </li>
+  <li>Table top Height: 75 cm. Monitor Shelf Height: 48W x 20D cm. Cup Holder Size: 6cm. </li>
+  <li>Headphone Hook: 5L x 2W cm. Weight Capacity: 40kg (table top), 3kg (monitor shelf)*Self Assembly Required*Please note that this product is delivered direct from our supplier and may take a little longer to arrive</li></ul>`,
   },
 ];
