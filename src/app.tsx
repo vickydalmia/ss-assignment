@@ -7,6 +7,7 @@ import ProductDetail from "./components/product-detail";
 import { Text } from "./ui/text";
 import PlusIcon from "./ui/icons/plus-icon";
 import Slider from "./components/slider";
+import ProductPrice from "./components/product-price";
 
 const ProductSection = styled.div`
   height: 582px;
@@ -59,6 +60,11 @@ function App() {
                 <Slider products={products} />
               </FrequentlyBoughtSection>
             ) : null}
+            <ProductPrice
+              oldPrice={`${product.currency}${product.mrp}`}
+              sellingPrice={`${product.currency}${product.sellingPrice}`}
+              taxPrice={`${product.currency}${product.withoutTaxPrice}`}
+            />
           </ProductList>
         </ProductWrapper>
       </ProductSection>
