@@ -6,6 +6,7 @@ import OldPrice from "../../ui/old-price";
 import SellingPrice from "../../ui/selling-price";
 import TaxPrice from "../../ui/tax-price";
 import SelectButton from "../../ui/select-button";
+import Cart from "../cart/cart";
 
 const ProductImageWrapper = styled.div`
   width: 225px;
@@ -79,7 +80,14 @@ const ProductCard = ({ product, setSelectedProduct }: ProductCardProps) => {
           price={`${product.currency}${product.withoutTaxPrice}`}
         />
       </PriceBox>
-      <SelectButton onClick={() => setSelectedProduct(product)} />
+      {product.variant.length > 0 ? (
+        <SelectButton
+          onClick={() => setSelectedProduct(product)}
+          color={product.variant[0].color}
+        />
+      ) : (
+        <Cart width="225" />
+      )}
     </ProductWrapper>
   );
 };

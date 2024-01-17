@@ -4,6 +4,14 @@ const Colors = {
   red: "var(--red)",
   green: "var(--green)",
 };
+
+const ColorSelectOutSide = styled.div`
+  display: flex;
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+  align-items: center;
+`;
 const ColorSelectWrapper = styled.div<{
   width: string;
   height: string;
@@ -19,29 +27,39 @@ const ColorSelectWrapper = styled.div<{
   outline-offset: ${({ isSelected }) => (isSelected ? "1px" : null)};
   cursor: pointer;
   background-color: ${({ color }) => (color ? Colors[color] : null)};
-  &:not(:last-child){
-    margin-right: 8px;
-  }
+`;
+
+const ColorText = styled.span`
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-left: 10px;
 `;
 interface ColorSelectProps {
   width?: string;
   height?: string;
   color?: "black" | "red" | "green";
   isSelected?: boolean;
+  showText?: boolean;
 }
 const ColorSelect = ({
   width = "40",
   height = "40",
   color = "black",
   isSelected = false,
+  showText = false,
 }: ColorSelectProps) => {
   return (
-    <ColorSelectWrapper
-      width={width}
-      height={height}
-      color={color}
-      isSelected={isSelected}
-    />
+    <ColorSelectOutSide>
+      <ColorSelectWrapper
+        width={width}
+        height={height}
+        color={color}
+        isSelected={isSelected}
+      />
+      {showText ? <ColorText>{color}</ColorText> : null}
+    </ColorSelectOutSide>
   );
 };
 

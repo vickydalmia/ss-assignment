@@ -4,9 +4,10 @@ const CartWrapper = styled.div<{ width: string }>`
   border-radius: 4px;
   border: 1px solid #c2c7cc;
   background: #fff;
-  padding: 8px;
+  padding: 7px 8px;
   justify-content: space-between;
   display: flex;
+  margin: 10px 0 0 0;
   width: ${({ width }) => (width ? `${width}px` : "100%")};
 `;
 const Icon = styled.div`
